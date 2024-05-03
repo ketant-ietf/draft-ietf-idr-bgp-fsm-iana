@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="rfc7991bis.rnc"?>  <!-- Required for schema validation and schema-aware editing -->
+<!-- <?xml-stylesheet type="text/xsl" href="rfc2629.xslt" ?> -->
+<!-- This third-party XSLT can be enabled for direct transformations in XML processors, including most browsers -->
+
+
+<!DOCTYPE rfc [
+  <!ENTITY nbsp    "&#160;">
+  <!ENTITY zwsp   "&#8203;">
+  <!ENTITY nbhy   "&#8209;">
+  <!ENTITY wj     "&#8288;">
+]>
+<rfc
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  category="std"
+  docName="draft-ietf-idr-bgp-fsm-iana-00"
+  ipr="trust200902"
+  obsoletes=""
+  updates=""
+  submissionType="IETF"
+  xml:lang="en"
+  version="3">
+
+  <front>
+    <title abbrev="IANA Registry for BGP FSM">IANA Registrations for the BGP Finite State Machine (FSM)</title>
+
+    <seriesInfo name="Internet-Draft" value="draft-ietf-idr-bgp-fsm-iana-00"/>
+   
+    <author fullname="Jeffrey Haas" initials="J." role="editor" surname="Haas">
+      <organization>Juniper Networks</organization>
+      <address>
+        <postal>
+          <street>1133 Innovation Way</street>
+          <city>Sunnyvale</city>
+          <region>CA</region>
+          <code>94089</code>
+          <country>USA</country>
+        </postal>
+        <phone/>
+        <email>jhaas@juniper.net</email>
+      </address>
+    </author>
+   
+    <date year="2024"/>
+
+    <area>Routing</area>
+    <workgroup>IDR</workgroup>
+
+    <keyword>BGP</keyword>
+    <keyword>Border Gateway Protocol</keyword>
+    <keyword>FSM</keyword>
+    <keyword>Finite State Machine</keyword>
+    <abstract>
+      <t>The Border Gateway Protocol, version 4 (BGP-4) finite state machine
+         (FSM) is defined in RFC 4271.  Over the years, various extensions to
+         BGP have been authored that update the protocol's FSM.  Some elements
+         of the FSM are enumerated.  Those elements are referred to across BGP
+         extensions in their respective state machine changes, and may also be
+         used for management purposes in things such as YANG.</t>
+
+      <t>To provide consistent naming and enumeration of these FSM elements,
+         this draft requests IANA to create and maintain registries for elements
+         in the BGP FSM.</t>
+    </abstract>
+ 
+  </front>
+
+  <middle>
+    
+    <section>
+      <name>Introduction</name>
+
+      <t><xref target="RFC4271" section="8"/> defines BGP's finite state machine
+         (FSM).  Some elements of the FSM are enumerated.  These include:</t>
+
+      <ul>
+      <li><t>Session attributes (variables), which may be:</t>
+          <ul>
+          <li>Mandatory and must be supported by all BGP-4 implementations on
+              all BGP connections.</li>
+          <li>Optional and may be supported, either per connection or per local
+              system.</li>
+          </ul>
+      </li>
+      <li><t>Events, which may be:</t>
+          <ul>
+          <li>Administrative events.</li>
+          <li>Timer events.</li>
+          <li>TCP connection-based events.</li>
+          <li>BGP message-based events.</li>
+          </ul>
+      </li>
+      </ul>
+
+      <t>While the core FSM is defined in <xref target="RFC4271"/>, extensions
+         specified in other BGP documents may update FSM procedures. Consistent
+         enumeration and naming of these FSM elements is necessary for
+         procedural clarity.  Additionally, management mechanisms such as YANG
+         modules may expose BGP protocol state covered by these elements.</t>
+
+      <t>This document requests IANA to create and maintain appropriate registries for
+         these FSM elements.</t>
+
+      <section>
+        <name>Requirements Language</name>
+        <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL",
+          "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT
+          RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
+          interpreted as described in BCP 14 <xref target="RFC2119"/>
+          <xref target="RFC8174"/> when, and only when, they appear in
+          all capitals, as shown here.</t>
+      </section>
+      <!-- [CHECK] The 'Requirements Language' section is optional -->
+
+    </section>
+    
+    <section anchor="IANA">
+      <name>IANA Considerations</name>
+
+      <section>
+        <name>BGP-4 FSM Elements Registry</name>
+
+        <t>IANA is requested to create a new registry, titled, "BGP-4 Finite State
+           Machine (FSM) Elements".  The registration policy for the contents of
+           this registry and its sub-registries shall be "IETF Consensus".</t>
+
+        <t>The "BGP-4 Finite State Machine (FSM) Elements" registry will contain
+           the following sub-registries:</t>
+      </section>
+
+      <section>
+        <name>BGP-4 FSM Session Attribute Sub-Registries</name>
+
+        <t>The BGP-4 FSM Session Attribute Sub-Registries will consist of
+           entries with the following fields:</t>
+
+        <ul spacing="compact">
+          <li>Value</li>
+          <li>Name</li>
+          <li>Reference</li>
+        </ul>
+
+        <section>
+          <name>BGP-4 FSM Mandatory Session Attributes</name>
+
+          <table align="left">
+            <thead>
+              <tr>
+                <th>Value</th>
+                <th>Name</th>
+                <th>Reference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>State</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>ConnectRetryCounter</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td>ConnectRetryTimer</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td>ConnectRetryTime</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+                <td>HoldTimer</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+                <td>HoldTime</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+                <td>KeepaliveTimer</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+                <td>KeepaliveTime</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <name>BGP-4 FSM Optional Session Attributes</name>
+
+          <table align="left">
+            <thead>
+              <tr>
+                <th>Value</th>
+                <th>Name</th>
+                <th>Reference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>AcceptConnectionsUnconfiguredPeers</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>AllowAutomaticStart</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>AllowAutomaticStop</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>CollisionDetectEstablishedState</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>DampPeerOscillations</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>DelayOpen</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>DelayOpenTime</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>DelayOpenTimer</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>IdleHoldTime</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>IdleHoldTimer</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>PassiveTcpEstablishment</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>SendNOTIFICATIONwithoutOPEN</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>TrackTcpState</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <section>
+        <name>BGP-4 FSM Events Sub-Registry</name>
+
+        <t>The BGP-4 FSM Events Sub-Registries will consist of entries with the
+           following fields:</t>
+
+        <ul spacing="compact">
+          <li>Value</li>
+          <li>Name</li>
+          <li>Event Type</li>
+          <li>Reference</li>
+        </ul>
+
+        <section>
+          <name>BGP-4 FSM Administrative Events</name>
+
+          <table align="left">
+            <thead>
+              <tr>
+                <th>Value</th>
+                <th>Name</th>
+                <th>Event Type</th>
+                <th>Reference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>ManualStart</td>
+                <td>Administrative</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>ManualStop</td>
+                <td>Administrative</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td>AutomaticStart</td>
+                <td>Administrative</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td>ManualStart with PassiveTcpEstablishment</td>
+                <td>Administrative</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+                <td>AutomaticStart with PassiveTcpEstablishment</td>
+                <td>Administrative</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+                <td>AutomaticStart with DampPeerOscillations</td>
+                <td>Administrative</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+                <td>AutomaticStart with DampPeerOscillations and PassiveTcpEstablishment</td>
+                <td>Administrative</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+                <td>AutomaticStop</td>
+                <td>Administrative</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>9</td>
+                <td>ConnectRetryTimer Expires</td>
+                <td>Timer</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>10</td>
+                <td>HoldTimer Expires</td>
+                <td>Timer</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>11</td>
+                <td>KeepaliveTimer Expires</td>
+                <td>Timer</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>12</td>
+                <td>DelayOpenTimer Expires</td>
+                <td>Timer</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>13</td>
+                <td>IdleHoldTimer Expires</td>
+                <td>Timer</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>14</td>
+                <td>TcpConnection Valid</td>
+                <td>TCP Connection</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>15</td>
+                <td>Tcp CR Invalid</td>
+                <td>TCP Connection</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>16</td>
+                <td>Tcp CR Acked</td>
+                <td>TCP Connection</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>17</td>
+                <td>TcpConnectionConfirmed</td>
+                <td>TCP Connection</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>18</td>
+                <td>TcpConnectionFails</td>
+                <td>TCP Connection</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>19</td>
+                <td>BGPOpen</td>
+                <td>BGP Message</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>20</td>
+                <td>BGPOpen with DelayOpenTimer running</td>
+                <td>BGP Message</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>21</td>
+                <td>BGPHeaderErr</td>
+                <td>BGP Message</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>22</td>
+                <td>BGPOpenMsgErr</td>
+                <td>BGP Message</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>23</td>
+                <td>OpenCollisionDump</td>
+                <td>BGP Message</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>24</td>
+                <td>NotifMsgVerErr</td>
+                <td>BGP Message</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>25</td>
+                <td>NotifMsg</td>
+                <td>BGP Message</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>26</td>
+                <td>KeepAliveMsg</td>
+                <td>BGP Message</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>27</td>
+                <td>UpdateMsg</td>
+                <td>BGP Message</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+
+              <tr>
+                <td>28</td>
+                <td>UpdateMsgErr</td>
+                <td>BGP Message</td>
+                <td><xref target="RFC4271" section="8"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+    </section>
+    
+    <section anchor="Security">
+      <name>Security Considerations</name>
+      <t>This document does not introduce any new security considerations to the
+         BGP protocol.</t>
+    </section>
+    
+  </middle>
+
+  <back>
+    <references>
+      <name>References</name>
+      <references>
+        <name>Normative References</name>
+        
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.4271.xml"/>
+        <!-- The recommended and simplest way to include a well known reference -->
+        
+      </references>
+ 
+    </references>
+    
+    <section anchor="Acknowledgements" numbered="false">
+      <name>Acknowledgements</name>
+      <t>TBD</t>
+    </section>
+    
+    <section anchor="Contributors" numbered="false">
+      <name>Contributors</name>
+      <t>TBD</t>
+    </section>
+    
+ </back>
+</rfc>
