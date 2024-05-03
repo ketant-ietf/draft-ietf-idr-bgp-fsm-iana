@@ -1,0 +1,448 @@
+
+
+
+
+IDR                                                         J. Haas, Ed.
+Internet-Draft                                          Juniper Networks
+Intended status: Standards Track                              3 May 2024
+Expires: 4 November 2024
+
+
+       IANA Registrations for the BGP Finite State Machine (FSM)
+                     draft-ietf-idr-bgp-fsm-iana-00
+
+Abstract
+
+   The Border Gateway Protocol, version 4 (BGP-4) finite state machine
+   (FSM) is defined in RFC 4271.  Over the years, various extensions to
+   BGP have been authored that update the protocol's FSM.  Some elements
+   of the FSM are enumerated.  Those elements are referred to across BGP
+   extensions in their respective state machine changes, and may also be
+   used for management purposes in things such as YANG.
+
+   To provide consistent naming and enumeration of these FSM elements,
+   this draft requests IANA to create and maintain registries for
+   elements in the BGP FSM.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 4 November 2024.
+
+Copyright Notice
+
+   Copyright (c) 2024 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+
+
+
+Haas                     Expires 4 November 2024                [Page 1]
+
+Internet-Draft          IANA Registry for BGP FSM               May 2024
+
+
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
+     1.1.  Requirements Language . . . . . . . . . . . . . . . . . .   3
+   2.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   3
+     2.1.  BGP-4 FSM Elements Registry . . . . . . . . . . . . . . .   3
+     2.2.  BGP-4 FSM Session Attribute Sub-Registries  . . . . . . .   3
+       2.2.1.  BGP-4 FSM Mandatory Session Attributes  . . . . . . .   3
+       2.2.2.  BGP-4 FSM Optional Session Attributes . . . . . . . .   4
+     2.3.  BGP-4 FSM Events Sub-Registry . . . . . . . . . . . . . .   5
+       2.3.1.  BGP-4 FSM Administrative Events . . . . . . . . . . .   5
+   3.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
+   4.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
+     4.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
+   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   7
+   Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .   8
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   8
+
+1.  Introduction
+
+   Section 8 of [RFC4271] defines BGP's finite state machine (FSM).
+   Some elements of the FSM are enumerated.  These include:
+
+   *  Session attributes (variables), which may be:
+
+      -  Mandatory and must be supported by all BGP-4 implementations on
+         all BGP connections.
+
+      -  Optional and may be supported, either per connection or per
+         local system.
+
+   *  Events, which may be:
+
+      -  Administrative events.
+
+      -  Timer events.
+
+      -  TCP connection-based events.
+
+      -  BGP message-based events.
+
+
+
+
+
+
+Haas                     Expires 4 November 2024                [Page 2]
+
+Internet-Draft          IANA Registry for BGP FSM               May 2024
+
+
+   While the core FSM is defined in [RFC4271], extensions specified in
+   other BGP documents may update FSM procedures.  Consistent
+   enumeration and naming of these FSM elements is necessary for
+   procedural clarity.  Additionally, management mechanisms such as YANG
+   modules may expose BGP protocol state covered by these elements.
+
+   This document requests IANA to create and maintain appropriate
+   registries for these FSM elements.
+
+1.1.  Requirements Language
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in BCP
+   14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+2.  IANA Considerations
+
+2.1.  BGP-4 FSM Elements Registry
+
+   IANA is requested to create a new registry, titled, "BGP-4 Finite
+   State Machine (FSM) Elements".  The registration policy for the
+   contents of this registry and its sub-registries shall be "IETF
+   Consensus".
+
+   The "BGP-4 Finite State Machine (FSM) Elements" registry will contain
+   the following sub-registries:
+
+2.2.  BGP-4 FSM Session Attribute Sub-Registries
+
+   The BGP-4 FSM Session Attribute Sub-Registries will consist of
+   entries with the following fields:
+
+   *  Value
+   *  Name
+   *  Reference
+
+2.2.1.  BGP-4 FSM Mandatory Session Attributes
+
+   +=======+=====================+========================+
+   | Value | Name                | Reference              |
+   +=======+=====================+========================+
+   | 1     | State               | Section 8 of [RFC4271] |
+   +-------+---------------------+------------------------+
+   | 2     | ConnectRetryCounter | Section 8 of [RFC4271] |
+   +-------+---------------------+------------------------+
+   | 3     | ConnectRetryTimer   | Section 8 of [RFC4271] |
+
+
+
+Haas                     Expires 4 November 2024                [Page 3]
+
+Internet-Draft          IANA Registry for BGP FSM               May 2024
+
+
+   +-------+---------------------+------------------------+
+   | 4     | ConnectRetryTime    | Section 8 of [RFC4271] |
+   +-------+---------------------+------------------------+
+   | 5     | HoldTimer           | Section 8 of [RFC4271] |
+   +-------+---------------------+------------------------+
+   | 6     | HoldTime            | Section 8 of [RFC4271] |
+   +-------+---------------------+------------------------+
+   | 7     | KeepaliveTimer      | Section 8 of [RFC4271] |
+   +-------+---------------------+------------------------+
+   | 8     | KeepaliveTime       | Section 8 of [RFC4271] |
+   +-------+---------------------+------------------------+
+
+                           Table 1
+
+2.2.2.  BGP-4 FSM Optional Session Attributes
+
+   +=======+====================================+==============+
+   | Value | Name                               | Reference    |
+   +=======+====================================+==============+
+   | 1     | AcceptConnectionsUnconfiguredPeers | Section 8 of |
+   |       |                                    | [RFC4271]    |
+   +-------+------------------------------------+--------------+
+   | 2     | AllowAutomaticStart                | Section 8 of |
+   |       |                                    | [RFC4271]    |
+   +-------+------------------------------------+--------------+
+   | 3     | AllowAutomaticStop                 | Section 8 of |
+   |       |                                    | [RFC4271]    |
+   +-------+------------------------------------+--------------+
+   | 4     | CollisionDetectEstablishedState    | Section 8 of |
+   |       |                                    | [RFC4271]    |
+   +-------+------------------------------------+--------------+
+   | 5     | DampPeerOscillations               | Section 8 of |
+   |       |                                    | [RFC4271]    |
+   +-------+------------------------------------+--------------+
+   | 6     | DelayOpen                          | Section 8 of |
+   |       |                                    | [RFC4271]    |
+   +-------+------------------------------------+--------------+
+   | 7     | DelayOpenTime                      | Section 8 of |
+   |       |                                    | [RFC4271]    |
+   +-------+------------------------------------+--------------+
+   | 8     | DelayOpenTimer                     | Section 8 of |
+   |       |                                    | [RFC4271]    |
+   +-------+------------------------------------+--------------+
+   | 9     | IdleHoldTime                       | Section 8 of |
+   |       |                                    | [RFC4271]    |
+   +-------+------------------------------------+--------------+
+   | 10    | IdleHoldTimer                      | Section 8 of |
+   |       |                                    | [RFC4271]    |
+
+
+
+Haas                     Expires 4 November 2024                [Page 4]
+
+Internet-Draft          IANA Registry for BGP FSM               May 2024
+
+
+   +-------+------------------------------------+--------------+
+   | 11    | PassiveTcpEstablishment            | Section 8 of |
+   |       |                                    | [RFC4271]    |
+   +-------+------------------------------------+--------------+
+   | 12    | SendNOTIFICATIONwithoutOPEN        | Section 8 of |
+   |       |                                    | [RFC4271]    |
+   +-------+------------------------------------+--------------+
+   | 13    | TrackTcpState                      | Section 8 of |
+   |       |                                    | [RFC4271]    |
+   +-------+------------------------------------+--------------+
+
+                              Table 2
+
+2.3.  BGP-4 FSM Events Sub-Registry
+
+   The BGP-4 FSM Events Sub-Registries will consist of entries with the
+   following fields:
+
+   *  Value
+   *  Name
+   *  Event Type
+   *  Reference
+
+2.3.1.  BGP-4 FSM Administrative Events
+
+   +=======+==========================+================+==============+
+   | Value | Name                     | Event Type     | Reference    |
+   +=======+==========================+================+==============+
+   | 1     | ManualStart              | Administrative | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 2     | ManualStop               | Administrative | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 3     | AutomaticStart           | Administrative | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 4     | ManualStart with         | Administrative | Section 8 of |
+   |       | PassiveTcpEstablishment  |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 5     | AutomaticStart with      | Administrative | Section 8 of |
+   |       | PassiveTcpEstablishment  |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 6     | AutomaticStart with      | Administrative | Section 8 of |
+   |       | DampPeerOscillations     |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 7     | AutomaticStart with      | Administrative | Section 8 of |
+   |       | DampPeerOscillations and |                | [RFC4271]    |
+
+
+
+Haas                     Expires 4 November 2024                [Page 5]
+
+Internet-Draft          IANA Registry for BGP FSM               May 2024
+
+
+   |       | PassiveTcpEstablishment  |                |              |
+   +-------+--------------------------+----------------+--------------+
+   | 8     | AutomaticStop            | Administrative | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 9     | ConnectRetryTimer        | Timer          | Section 8 of |
+   |       | Expires                  |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 10    | HoldTimer Expires        | Timer          | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 11    | KeepaliveTimer Expires   | Timer          | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 12    | DelayOpenTimer Expires   | Timer          | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 13    | IdleHoldTimer Expires    | Timer          | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 14    | TcpConnection Valid      | TCP Connection | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 15    | Tcp CR Invalid           | TCP Connection | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 16    | Tcp CR Acked             | TCP Connection | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 17    | TcpConnectionConfirmed   | TCP Connection | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 18    | TcpConnectionFails       | TCP Connection | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 19    | BGPOpen                  | BGP Message    | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 20    | BGPOpen with             | BGP Message    | Section 8 of |
+   |       | DelayOpenTimer running   |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 21    | BGPHeaderErr             | BGP Message    | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 22    | BGPOpenMsgErr            | BGP Message    | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 23    | OpenCollisionDump        | BGP Message    | Section 8 of |
+
+
+
+Haas                     Expires 4 November 2024                [Page 6]
+
+Internet-Draft          IANA Registry for BGP FSM               May 2024
+
+
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 24    | NotifMsgVerErr           | BGP Message    | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 25    | NotifMsg                 | BGP Message    | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 26    | KeepAliveMsg             | BGP Message    | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 27    | UpdateMsg                | BGP Message    | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+   | 28    | UpdateMsgErr             | BGP Message    | Section 8 of |
+   |       |                          |                | [RFC4271]    |
+   +-------+--------------------------+----------------+--------------+
+
+                                 Table 3
+
+3.  Security Considerations
+
+   This document does not introduce any new security considerations to
+   the BGP protocol.
+
+4.  References
+
+4.1.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+
+   [RFC4271]  Rekhter, Y., Ed., Li, T., Ed., and S. Hares, Ed., "A
+              Border Gateway Protocol 4 (BGP-4)", RFC 4271,
+              DOI 10.17487/RFC4271, January 2006,
+              <https://www.rfc-editor.org/info/rfc4271>.
+
+Acknowledgements
+
+   TBD
+
+
+
+
+
+Haas                     Expires 4 November 2024                [Page 7]
+
+Internet-Draft          IANA Registry for BGP FSM               May 2024
+
+
+Contributors
+
+   TBD
+
+Author's Address
+
+   Jeffrey Haas (editor)
+   Juniper Networks
+   1133 Innovation Way
+   Sunnyvale, CA 94089
+   United States of America
+   Email: jhaas@juniper.net
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Haas                     Expires 4 November 2024                [Page 8]
