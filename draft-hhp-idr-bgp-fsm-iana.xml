@@ -13,7 +13,7 @@
 <rfc
   xmlns:xi="http://www.w3.org/2001/XInclude"
   category="std"
-  docName="draft-ietf-idr-bgp-fsm-iana-00"
+  docName="draft-hhp-idr-bgp-fsm-iana-00"
   ipr="trust200902"
   obsoletes=""
   updates=""
@@ -24,7 +24,8 @@
   <front>
     <title abbrev="IANA Registry for BGP FSM">IANA Registrations for the BGP Finite State Machine (FSM)</title>
 
-    <seriesInfo name="Internet-Draft" value="draft-ietf-idr-bgp-fsm-iana-00"/>
+    <!-- seriesInfo name="Internet-Draft" value="draft-ietf-idr-bgp-fsm-iana-00"/-->
+    <seriesInfo name="Internet-Draft" value="draft-hhp-idr-bgp-fsm-iana-00"/>
    
     <author fullname="Jeffrey Haas" initials="J." role="editor" surname="Haas">
       <organization>Juniper Networks</organization>
@@ -38,6 +39,36 @@
         </postal>
         <phone/>
         <email>jhaas@juniper.net</email>
+      </address>
+    </author>
+
+    <author fullname="Susan Hares" initials="S" surname="Hares" role="editor">
+      <organization>Hickory Hill Consulting</organization>
+      <address>
+        <postal>
+          <street>7453 Hickory Hill</street>
+          <city>Saline</city>
+          <region>MI</region>
+          <code>48176</code>
+          <country>USA</country>
+        </postal>
+		<phone>+1-734-604-0332</phone>
+        <email>shares@ndzh.com</email>
+      </address>
+    </author>
+
+    <author fullname="Keyur Patel" initials="K." surname="Patel" role="editor">
+      <organization showOnFrontPage="true">Arrcus</organization>
+      <address>
+        <postal>
+          <street>2077 Gateway Place</street>
+          <street>Suite #400</street>
+          <city>San Jose</city>
+          <region>CA</region>
+          <code>95119</code>
+          <country>United States of America</country>
+        </postal>
+        <email>keyur@arrcus.com</email>
       </address>
     </author>
    
