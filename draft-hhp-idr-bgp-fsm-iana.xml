@@ -87,7 +87,8 @@
          BGP have been authored that update the protocol's FSM.  Some elements
          of the FSM are enumerated.  Those elements are referred to across BGP
          extensions in their respective state machine changes, and may also be
-         used for management purposes in things such as YANG.</t>
+         used for management purposes in things such as
+         <xref target="RFC7950">YANG</xref>.</t>
 
       <t>To provide consistent naming and enumeration of these FSM elements,
          this draft requests IANA to create and maintain registries for elements
@@ -107,9 +108,9 @@
       <ul>
       <li><t>Session attributes (variables), which may be:</t>
           <ul>
-          <li>Mandatory and must be supported by all BGP-4 implementations on
+          <li>Mandatory and MUST be supported by all BGP-4 implementations on
               all BGP connections.</li>
-          <li>Optional and may be supported, either per connection or per local
+          <li>Optional and MAY be supported, either per connection or per local
               system.</li>
           </ul>
       </li>
@@ -126,7 +127,8 @@
       <t>While the core FSM is defined in <xref target="RFC4271"/>, extensions
          specified in other BGP documents may update FSM procedures. Consistent
          enumeration and naming of these FSM elements is necessary for
-         procedural clarity.  Additionally, management mechanisms such as YANG
+         procedural clarity.  Additionally, management mechanisms such as
+         <xref target="RFC7950">YANG</xref>
          modules may expose BGP protocol state covered by these elements.</t>
 
       <t>This document requests IANA to create and maintain appropriate registries for
@@ -564,6 +566,13 @@
         
       </references>
  
+      <references>
+        <name>Informative References</name>
+
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.7950.xml"/>
+
+      </references>
+
     </references>
     
     <section anchor="Acknowledgements" numbered="false">
