@@ -13,7 +13,7 @@
 <rfc
   xmlns:xi="http://www.w3.org/2001/XInclude"
   category="std"
-  docName="draft-hhp-idr-bgp-fsm-iana-01"
+  docName="draft-hhp-idr-bgp-fsm-iana-02"
   ipr="trust200902"
   obsoletes=""
   updates=""
@@ -24,7 +24,7 @@
   <front>
     <title abbrev="IANA Registry for BGP FSM">IANA Registrations for the BGP Finite State Machine (FSM)</title>
 
-    <seriesInfo name="Internet-Draft" value="draft-hhp-idr-bgp-fsm-iana-01"/>
+    <seriesInfo name="Internet-Draft" value="draft-hhp-idr-bgp-fsm-iana-02"/>
    
     <author fullname="Jeffrey Haas" initials="J." role="editor" surname="Haas">
       <organization>Juniper Networks</organization>
@@ -86,11 +86,10 @@
          BGP have been authored that update the protocol's FSM.  Some elements
          of the FSM are enumerated.  Those elements are referred to across BGP
          extensions in their respective state machine changes, and may also be
-         used for management purposes in things such as
-         <xref target="RFC7950">YANG</xref>.</t>
+         used for management purposes in things such as YANG (RFC 7950).</t>
 
       <t>To provide consistent naming and enumeration of these FSM elements,
-         this draft requests IANA to create and maintain registries for elements
+         this document requests IANA to create and maintain registries for elements
          in the BGP FSM.</t>
     </abstract>
  
@@ -594,7 +593,7 @@
     
     <section anchor="Acknowledgements" numbered="false">
       <name>Acknowledgements</name>
-      <t>TBD</t>
+      <t>Thanks to Tom Petch for his review on this document.</t>
     </section>
     
     <section anchor="Contributors" numbered="false">
