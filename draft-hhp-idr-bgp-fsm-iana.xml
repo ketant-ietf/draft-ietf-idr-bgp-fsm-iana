@@ -153,7 +153,9 @@
 
         <t>IANA is requested to create a new registry, titled, "BGP-4 Finite State
            Machine (FSM) Elements".  The registration policy for the contents of
-           this registry and its sub-registries shall be "IETF Consensus".</t>
+           this registry and its sub-registries shall be "IETF Review with
+           Designated Experts".  The designated experts for these registries are
+           the IDR chairs.</t>
 
         <t>The "BGP-4 Finite State Machine (FSM) Elements" registry will contain
            the following sub-registries:</t>
@@ -183,6 +185,11 @@
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td>0</td>
+                <td>Reserved</td>
+                <td>This document</td>
+              </tr>
               <tr>
                 <td>1</td>
                 <td>State</td>
@@ -246,6 +253,11 @@
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td>0</td>
+                <td>Reserved</td>
+                <td>This document.</td>
+              </tr>
               <tr>
                 <td>1</td>
                 <td>AcceptConnectionsUnconfiguredPeers</td>
@@ -352,6 +364,12 @@
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td>0</td>
+                <td>Reserved</td>
+                <td>-</td>
+                <td>This document.</td>
+              </tr>
               <tr>
                 <td>1</td>
                 <td>ManualStart</td>
@@ -593,7 +611,7 @@
     
     <section anchor="Acknowledgements" numbered="false">
       <name>Acknowledgements</name>
-      <t>Thanks to Tom Petch for his review on this document.</t>
+      <t>Thanks to Tom Petch and Ketan Talaulikar for their review on this document.</t>
     </section>
     
     <section anchor="Contributors" numbered="false">
