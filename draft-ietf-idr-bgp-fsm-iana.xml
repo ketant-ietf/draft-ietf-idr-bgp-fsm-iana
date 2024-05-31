@@ -13,7 +13,7 @@
 <rfc
   xmlns:xi="http://www.w3.org/2001/XInclude"
   category="std"
-  docName="draft-hhp-idr-bgp-fsm-iana-02"
+  docName="draft-ietf-idr-bgp-fsm-iana-00"
   ipr="trust200902"
   obsoletes=""
   updates=""
@@ -24,7 +24,7 @@
   <front>
     <title abbrev="IANA Registry for BGP FSM">IANA Registrations for the BGP Finite State Machine (FSM)</title>
 
-    <seriesInfo name="Internet-Draft" value="draft-hhp-idr-bgp-fsm-iana-02"/>
+    <seriesInfo name="Internet-Draft" value="draft-ietf-idr-bgp-fsm-iana-00"/>
    
     <author fullname="Jeffrey Haas" initials="J." role="editor" surname="Haas">
       <organization>Juniper Networks</organization>
