@@ -152,10 +152,11 @@
         <name>BGP-4 FSM Elements Registry</name>
 
         <t>IANA is requested to create a new registry, titled, "BGP-4 Finite State
-           Machine (FSM) Elements".  The registration policy for the contents of
-           this registry and its sub-registries shall be "IETF Review with
-           Designated Experts".  The designated experts for these registries are
-           the IDR chairs.</t>
+           Machine (FSM) Elements". This is a new registry grouping distinct from the
+           existing Border Gatewway Protocol (BGP) Parameters registry group.
+	   The registration policy for the contents of this registry and its 
+	   sub-registries shall be "IETF Review with Designated Experts".  The 
+	   designated experts for these registries are the IDR WG chairs.</t>
 
         <t>The "BGP-4 Finite State Machine (FSM) Elements" registry will contain
            the following sub-registries:</t>
@@ -168,7 +169,7 @@
            entries with the following fields:</t>
 
         <ul spacing="compact">
-          <li>Value</li>
+          <li>Value (a 16-bit unsigned integer)</li>
           <li>Name</li>
           <li>Reference</li>
         </ul>
@@ -247,7 +248,7 @@
           <table align="left">
             <thead>
               <tr>
-                <th>Value</th>
+                <th>Value (a 16-bit unsigned integer)</th>
                 <th>Name</th>
                 <th>Reference</th>
               </tr>
